@@ -7,7 +7,8 @@
 // Inherited from source: registry, environment, revision, now, postgreSQLVersions,
 // postgreSQLPreviewVersions, getPgVersions, cleanVersion, getMajor, isPreview.
 
-fullname = (environment == "testing") ? "${registry}/timescaledb-postgis-testing" : "${registry}/timescaledb-postgis"
+// Image references must be lowercase; the registry comes from github.repository_owner, which need not be.
+fullname = lower((environment == "testing") ? "${registry}/timescaledb-postgis-testing" : "${registry}/timescaledb-postgis")
 
 variable "postgisMajorVersions" {
   default = ["3"]
@@ -58,25 +59,25 @@ timescaledbMatrix = {
       // renovate: datasource=deb suite=bookworm depName=timescaledb-2-postgresql-15
       tsdb = "2.28.3~debian12-1518"
       // renovate: datasource=deb suite=bookworm depName=timescaledb-toolkit-postgresql-15
-      toolkit = "1:1.25.0~debian12"
+      toolkit = "1:1.26.0~debian12"
     }
     "16" = {
       // renovate: datasource=deb suite=bookworm depName=timescaledb-2-postgresql-16
-      tsdb = "2.29.2~debian12-1614"
+      tsdb = "2.31.0~debian12-1615"
       // renovate: datasource=deb suite=bookworm depName=timescaledb-toolkit-postgresql-16
-      toolkit = "1:1.25.0~debian12"
+      toolkit = "1:1.26.0~debian12"
     }
     "17" = {
       // renovate: datasource=deb suite=bookworm depName=timescaledb-2-postgresql-17
-      tsdb = "2.29.2~debian12-1710"
+      tsdb = "2.31.0~debian12-1711"
       // renovate: datasource=deb suite=bookworm depName=timescaledb-toolkit-postgresql-17
-      toolkit = "1:1.25.0~debian12"
+      toolkit = "1:1.26.0~debian12"
     }
     "18" = {
       // renovate: datasource=deb suite=bookworm depName=timescaledb-2-postgresql-18
-      tsdb = "2.29.2~debian12-1804"
+      tsdb = "2.31.0~debian12-1806"
       // renovate: datasource=deb suite=bookworm depName=timescaledb-toolkit-postgresql-18
-      toolkit = "1:1.25.0~debian12"
+      toolkit = "1:1.26.0~debian12"
     }
   }
   trixie = {
@@ -84,25 +85,25 @@ timescaledbMatrix = {
       // renovate: datasource=deb suite=trixie depName=timescaledb-2-postgresql-15
       tsdb = "2.28.3~debian13-1518"
       // renovate: datasource=deb suite=trixie depName=timescaledb-toolkit-postgresql-15
-      toolkit = "1:1.25.0~debian13"
+      toolkit = "1:1.26.0~debian13"
     }
     "16" = {
       // renovate: datasource=deb suite=trixie depName=timescaledb-2-postgresql-16
-      tsdb = "2.29.2~debian13-1614"
+      tsdb = "2.31.0~debian13-1615"
       // renovate: datasource=deb suite=trixie depName=timescaledb-toolkit-postgresql-16
-      toolkit = "1:1.25.0~debian13"
+      toolkit = "1:1.26.0~debian13"
     }
     "17" = {
       // renovate: datasource=deb suite=trixie depName=timescaledb-2-postgresql-17
-      tsdb = "2.29.2~debian13-1710"
+      tsdb = "2.31.0~debian13-1711"
       // renovate: datasource=deb suite=trixie depName=timescaledb-toolkit-postgresql-17
-      toolkit = "1:1.25.0~debian13"
+      toolkit = "1:1.26.0~debian13"
     }
     "18" = {
       // renovate: datasource=deb suite=trixie depName=timescaledb-2-postgresql-18
-      tsdb = "2.29.2~debian13-1804"
+      tsdb = "2.31.0~debian13-1806"
       // renovate: datasource=deb suite=trixie depName=timescaledb-toolkit-postgresql-18
-      toolkit = "1:1.25.0~debian13"
+      toolkit = "1:1.26.0~debian13"
     }
   }
 }
